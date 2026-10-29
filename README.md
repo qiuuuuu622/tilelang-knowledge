@@ -2,13 +2,15 @@
 
 面向人和 Agent 的 TileLang 知识库：理解实现为何这样设计、何时适用，并通过实验沉淀可复用经验。
 
-已整理来自 SGLang、vLLM、TileLang、TileKernels、TileOPs 的 **33 篇单文件算子案例**，包含完整选定核心代码、设计取舍、适用边界和固定来源。见 [案例索引](kernels/README.md)。另有 **7 篇 GPU 优化决策模式**，结合已合并 PR、作者源码和社区复盘，说明触发证据、最小实验与退出条件。见 [模式索引](patterns/README.md)。当前完成资料与源码静态核查，尚无本地 GPU 实验结果；TileLang 编程知识目录仍待补充。
+已整理来自 SGLang、vLLM、TileLang、TileKernels、TileOPs 的 **33 篇单文件算子案例**，包含完整选定核心代码、设计取舍、适用边界和固定来源。见 [案例索引](kernels/README.md)。另有 **7 篇 GPU 优化决策模式**，结合已合并 PR、作者源码和社区复盘，说明触发证据、最小实验与退出条件。见 [模式索引](patterns/README.md)。
+
+现有 **20 篇 TileLang 编程知识卡**，覆盖语义、API、布局、编译、调试与测量，包含最小示例、常见误用和固定来源，见 [知识索引](tilelang/README.md)。当前完成资料与源码静态核查及文档代码语法检查，尚未执行本批示例的 TileLang 编译与 GPU 实验。
 
 ## 内容地图
 
 | 目录 | 内容 |
 | --- | --- |
-| [tilelang/](tilelang/) | 语义、API、布局、编译、调试与调优 |
+| [tilelang/](tilelang/README.md) | 20 篇语义、API、布局、编译、调试与调优知识卡 |
 | [kernels/](kernels/) | 高性能算子实现与设计解释 |
 | [patterns/](patterns/README.md) | 7 篇有适用条件、证据与退出条件的 GPU 优化模式 |
 | [workbench/](workbench/) | 具体任务的证据、瓶颈假设、实验与下一步建议 |
