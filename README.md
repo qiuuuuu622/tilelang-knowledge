@@ -2,7 +2,7 @@
 
 面向人和 Agent 的 TileLang 知识库：理解实现为何这样设计、何时适用，并通过实验沉淀可复用经验。
 
-已整理来自 SGLang、vLLM、TileLang、TileKernels、TileOPs 的 **33 篇单文件算子案例**，包含完整选定核心代码、设计取舍、适用边界和固定来源。见 [案例索引](kernels/README.md)。本轮完成源码静态核查，尚无本地 GPU 实验结果；其余知识与模式目录仍待补充。
+已整理来自 SGLang、vLLM、TileLang、TileKernels、TileOPs 的 **33 篇单文件算子案例**，包含完整选定核心代码、设计取舍、适用边界和固定来源。见 [案例索引](kernels/README.md)。另有 **7 篇 GPU 优化决策模式**，结合已合并 PR、作者源码和社区复盘，说明触发证据、最小实验与退出条件。见 [模式索引](patterns/README.md)。当前完成资料与源码静态核查，尚无本地 GPU 实验结果；TileLang 编程知识目录仍待补充。
 
 ## 内容地图
 
@@ -10,7 +10,7 @@
 | --- | --- |
 | [tilelang/](tilelang/) | 语义、API、布局、编译、调试与调优 |
 | [kernels/](kernels/) | 高性能算子实现与设计解释 |
-| [patterns/](patterns/) | 有适用条件和证据的优化模式 |
+| [patterns/](patterns/README.md) | 7 篇有适用条件、证据与退出条件的 GPU 优化模式 |
 | [workbench/](workbench/) | 具体任务的证据、瓶颈假设、实验与下一步建议 |
 
 ### TileLang 编程知识
@@ -25,7 +25,7 @@
 ### 案例与优化模式
 
 算子案例按 GEMM、attention、reduction、normalization、quantization 分类。
-优化模式按数据搬运、并行策略、流水线、融合分类。
+优化模式按数据搬运、并行策略、融合、热循环、流水线五类管理。先按 [触发证据](patterns/README.md#按当前证据选择) 选择模式，再读完整案例；固定来源与未验证范围见 [模式来源登记](patterns/SOURCES.md)。当前模式证据覆盖 NVIDIA CUDA 和 AMD ROCm，不纳入 CPU、NPU、TPU；非 TileLang 实现的经验仅作为迁移建议。
 
 ## 使用方法
 

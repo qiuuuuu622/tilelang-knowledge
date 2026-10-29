@@ -16,6 +16,8 @@
 
 ## 按问题找设计
 
+需要判断下一步改什么时，先查 [优化模式索引](../patterns/README.md)：它按触发证据组织最小实验、适用范围和退出条件；本目录保留核心完整实现。
+
 | 观察到的问题或需求 | 先读 | 实验要区分什么 |
 | --- | --- | --- |
 | decode 的 CTA 太少 | [MLA split-K](attention/tilelang-mla-decode.md)、[DSA partial/combine](attention/sglang-dsa-split-decode.md) | 增加并行度是否足以抵消合并成本 |
